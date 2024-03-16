@@ -1,25 +1,30 @@
-import express from "express"
-import db from "/db/connection.js"
-import cors from "cors"
-import logger from "morgan"
-import chalk from "chalk"
-import allRoutes from "./routes/index.js"
+import express from "express";
+import db from "./db/connection.js";
+import cors from "cors";
+import logger from "morgan";
+import chalk from "chalk";
+import dotenv from "dotenv";
 
-const app = express()
+// import allRoutes from "./routes/index.js";
 
-app.use(express.json())
-app.use(cors())
-app.use(logger("dev"))
+/* CONFIGURATIONS */
+dotenv.config();
 
-app.use("/", allRoutes)
+const app = express();
 
-const PORT = process.env.PORT || 3000
+app.use(express.json());
+app.use(cors());
+app.use(logger("dev"));
+
+// app.use("/", allRoutes);
+
+const PORT = process.env.PORT || 3000;
 
 db.on("connected", () => {
-    console.clear()
-    console.log(chalk.cyanBright.bgMagenta("CONNECTED to Mongodb"))
+  console.clear();
+  console.log(chalk.cyanBright.bgMagenta("CONNECTED to Mongodb"));
 
-    app.listen(PORT, () => {
-        console.log(chalk.yellowBright(`Express server runnng on port: ${PORT}`))
-    })
-})
+  app.listen(PORT, () => {
+    console.log(chalk.yellowBright(`Express server runnng on port: ${PORT}`));
+  });
+});
