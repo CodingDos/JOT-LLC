@@ -20,8 +20,28 @@ export const getCategories = async (req, res) => {
     }
   };
 
-
-
+  export const createCategory = async (req, res) => {
+    try {
+      const token = req.headers.authorization;
+      if (!token) {
+        return res.status(401).json({ error: "Authorization token not provided" });
+      }
+  
+      const decoded = jwt.verify(token, process.env.TOKEN_KEY);
+      const userId = decoded.id;
+  
+      // Create a new category instance with user ID
+      const newCategory = new Category({ ...req.body, userId });
+  
+      // Save the new category to the database
+      await newCategory.save();
+  
+      res.status(201).json(newCategory);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: error.message });
+    }
+  };
 
 
 // router.get("/:id", controllers.getCategories); //Will get all categories based on userID
