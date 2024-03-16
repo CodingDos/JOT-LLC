@@ -1,61 +1,65 @@
-import Counter from "../models/Counter.js"
-
+import Counter from "../models/Counter.js";
 
 export const getCounters = async (req, res) => {
   try {
-    const { id } = req.params
-    const counter = await Counter.find(id)
-    res.json(counter)
+    const { id } = req.params;
+    const counter = await Counter.find(id);
+    res.json(counter);
   } catch (error) {
-    console.error(error)
-    res.status(500).json({ error: error.message })
+    console.error(error);
+    res.status(500).json({ error: error.message });
   }
-}
+};
 
 export const createCounter = async (req, res) => {
   try {
-    const newCounter = new Counter(req.body)
-    await newCounter.save()
-    res.status(201).json(newCounter)
+    const { categoryId } = req.params;
+    const newCounter = new Counter(...req.body, categoryId);
+    await newCounter.save();
+    res.status(201).json(newCounter);
   } catch (error) {
-    console.error(error)
-    res.status(500).json({ error: error.message })
+    console.error(error);
+    res.status(500).json({ error: error.message });
   }
-}
+};
 
-export const editCounter = async (req, res) => {
-  try {
-    const { id } = req.params
-    const counter = await Counter.findByIdAndUpdate( id, req.body, { new: true })
-    res.status(201).json(counter)
-  } catch (error) {
-    console.error(error)
-    res.status(500).json({ error: error.message })
-  }
-}
+// export const editCounter = async (req, res) => {
+//   try {
+//     const { id } = req.params;
+//     const counter = await Counter.findByIdAndUpdate(id, req.body, {
+//       new: true,
+//     });
+//     res.status(201).json(counter);
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ error: error.message });
+//   }
+// };
 
 export const addCount = async (req, res) => {
   try {
-    const { id } = req.params
-    let counter = Counter.findById(id)
-    let currentCount = counter.count
-    const updatedCount = await Counter.findByIdAndUpdate( id, { count: currentCount +1})
-    res.status(201).json(updatedCount)
+    const { id } = req.params;
+    let counter = Counter.findById(id);
+    let currentCount = counter.count;
+    const updatedCount = await Counter.findByIdAndUpdate(id, {
+      count: currentCount + 1,
+    });
+    res.status(201).json(updatedCount);
   } catch (error) {
-    console.error(error)
-    res.status(500).json({ error: error.message })
+    console.error(error);
+    res.status(500).json({ error: error.message });
   }
-}
+};
 
 export const deleteCounter = async (req, res) => {
   try {
-    const { id } = req.params
-    const counter = await Counter.findByIdAndDelete( id )
+    const { id } = req.params;
+    const counter = await Counter.findByIdAndDelete(id);
   } catch (error) {
-    console.error(error)
-    res.status(500).json({ error: error.message })
+    console.error(error);
+    res.status(500).json({ error: error.message });
   }
-}
+};
 
 // router.get("/:categoryId/counters", controllers.getCounters)// WILL GET ALL COUNTERS BASED ON CATEGORY
 // router.post("/counters/create", controllers.createCounter)
