@@ -33,6 +33,19 @@ export const editCounter = async (req, res) => {
   }
 }
 
+export const editCount = async (req, res) => {
+  try {
+    const { id } = req.params
+    let counter = Counter.findById(id)
+    let currentCount = counter.count
+    const updatedCount = await Counter.findByIdAndUpdate( id, { count: currentCount +1})
+    res.status(201).json(updatedCount)
+  } catch (error) {
+    console.error(error)
+    res.status(500).json({ error: error.message })
+  }
+}
+
 export const deleteCounter = async (req, res) => {
   try {
     const { id } = req.params
