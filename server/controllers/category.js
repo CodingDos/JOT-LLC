@@ -47,6 +47,32 @@ export const createCategory = async (req, res) => {
   }
 };
 
+export const editCategory = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const category = await Category.findByIdAndUpdate(id, req.body, { new: true });
+    res.status(200).json(category);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: error.message });
+  }
+};
+
+
+export const deleteCategory = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deleted = await Category.findByIdAndDelete(id);
+    if (deleted) {
+      return res.status(200).send("Category deleted");
+    }
+    throw new Error("Category not found");
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).json({ error: error.message });
+  }
+};
+
 // router.get("/:id", controllers.getCategories); //Will get all categories based on userID
 // router.post("/create", controllers.createCategory);
 // router.put("/edit/:id", controllers.editCategory); // Will be able to edit a specific category using the category ID
