@@ -4,8 +4,8 @@ import * as controllers from "../controllers/counter.js"
 
 const router = Router()
 
-router.get("/counters", controllers.getCounters)// WILL GET ALL COUNTERS BASED ON CATEGORY
-router.post("/counters/create", controllers.createCounter)
+router.get("/:categoryId", controllers.getCounters)// WILL GET ALL COUNTERS BASED ON CATEGORY
+router.post("/create", controllers.createCounter)
 router.put("/:counterId/edit", controllers.editCounter)
 router.delete("/:counterId/delete", controllers.deleteCounter)
 

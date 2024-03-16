@@ -3,7 +3,8 @@ import Counter from "../models/Counter.js"
 
 export const getCounters = async (req, res) => {
   try {
-    const counter = await Counter.find()
+    const { id } = req.params
+    const counter = await Counter.find(id)
     res.json(counter)
   } catch (error) {
     console.error(error)
@@ -56,7 +57,7 @@ export const deleteCounter = async (req, res) => {
   }
 }
 
-// router.get("/counters", controllers.getCounters)// WILL GET ALL COUNTERS BASED ON CATEGORY
+// router.get("/:categoryId/counters", controllers.getCounters)// WILL GET ALL COUNTERS BASED ON CATEGORY
 // router.post("/counters/create", controllers.createCounter)
 // router.put("/:counterId/edit", controllers.editCounter)
 // router.delete("/:counterId/delete", controllers.deleteCounter)
