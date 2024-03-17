@@ -1,8 +1,8 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { useState, useEffect } from "react";
 
-import Hamburger from "../components/Nav.jsx"
+import Hamburger from "../components/Nav.jsx";
 import Landing from "../pages/Landing.jsx";
 import Counter from "../pages/Counter.jsx";
 import Category from "../pages/Category.jsx";
@@ -12,13 +12,11 @@ import Register from "../pages/Register.jsx";
 import Footer from "../components/Footer.jsx";
 import About from "../pages/About.jsx";
 
-import {verify} from "../services/users.js";
-
+import { verify } from "../services/users.js";
 
 import { Routes, Route } from "react-router-dom";
 
 function App() {
-
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -28,7 +26,6 @@ function App() {
     };
     fetchUser();
   }, []);
-
 
   return (
     <div className ="backgroundIMG">
@@ -40,7 +37,7 @@ function App() {
         <Route path="/category" element={<Category />} />
         <Route path="/counter" element={<Counter />} />
         <Route path="/data-page/:categoryID" element={<Data />} />
-        <Route path="/about" element={<About />}/>
+        <Route path="/about" element={<About />} />
       </Routes>
       <Footer />
     </div>
