@@ -3,7 +3,7 @@ import * as jwtDecode from "jwt-decode";
 
 export const login = async (credentials) => {
   try {
-    const response = await api.post("/login", credentials);
+    const response = await api.post("/auth/login", credentials);
     localStorage.setItem("token", response.data.token);
     const user = jwtDecode(response.data.token);
     return user;
@@ -22,7 +22,8 @@ export const login = async (credentials) => {
 
 export const register = async (credentials) => {
   try {
-    const response = await api.post("/register", credentials);
+    console.log("registering", credentials); //TEST DEBUG
+    const response = await api.post("/auth/register", credentials);
     localStorage.setItem("token", response.data.token);
     const user = jwtDecode(response.data.token);
     return user;
@@ -56,7 +57,7 @@ export const verify = async () => {
   //get token from local storage
   const token = localStorage.getItem("token");
   if (token) {
-    const res = await api.get("/verify");
+    const res = await api.get("/auth/verify");
     return res.data;
   }
 };
