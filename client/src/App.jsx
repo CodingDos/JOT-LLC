@@ -19,7 +19,7 @@ function App() {
     <>
       <Hamburger />
       <Routes>
-        <Route path="/home" element={<Landing />} />
+        <Route path="/" element={<Landing />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/category" element={<Category />} />

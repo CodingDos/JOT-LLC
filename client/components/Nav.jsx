@@ -7,11 +7,11 @@ function Hamburger() {
   return (
     <Navbar expand="">
         <Container>
-            <Navbar.Brand href="home"> Jot </Navbar.Brand>
+            <Navbar.Brand href="/"> Jot </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbar" />
             <Navbar.Collapse id="navbar">
                 <Nav className="navList">
-                    <Nav.Link href="home">Landing</Nav.Link>
+                    <Nav.Link href="/">Landing</Nav.Link>
                     <Nav.Link href="category">Category</Nav.Link>
                     <Nav.Link href="About">About</Nav.Link>
                 </Nav>
