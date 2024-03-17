@@ -1,0 +1,17 @@
+.landingPage {
+    background-color: #070143;
+  
+  }
+  
+  .landingBody {
+    color: rgb(255, 255, 255);
+  }
+  
+  .landingContent {
+    text-align: center;
+  }
+  
+  .signUpButton {
+    background-color: #FB2576;
+    color: white;
+  }
