@@ -27,10 +27,6 @@ function Login() {
 
 export default Login;
 
-
-
-
-
 // import FloatingLabel from "react-bootstrap/FloatingLabel";
 // import Form from "react-bootstrap/Form";
 
@@ -103,22 +99,21 @@ export default Login;
 //         <Form.Control type="password" placeholder="Password" />
 //       </FloatingLabel>
 
-
 //       {/* <Form onSubmit={onSignIn}>
 //         <FloatingLabel controlId="floatingInput" label="Username" className="mb-3">
-//             <Form.Control 
-//               type="text" 
-//               placeholder="" 
-//               value={username} 
-//               // onChange={handleChange} 
+//             <Form.Control
+//               type="text"
+//               placeholder=""
+//               value={username}
+//               // onChange={handleChange}
 //             />
 //         </FloatingLabel>
 //         <FloatingLabel controlId="floatingPassword" label="Password">
-//             <Form.Control 
-//               type="password" 
-//               placeholder="Password" 
-//               value={password} 
-//               // onChange={handleChange} 
+//             <Form.Control
+//               type="password"
+//               placeholder="Password"
+//               value={password}
+//               // onChange={handleChange}
 //             />
 //         </FloatingLabel>
 //         <button type="submit" className="btn btn-primary">Login</button>
@@ -127,12 +122,8 @@ export default Login;
 
 //       </Form> */}
 
-
 //     </div>
 //   );
 // }
 
 // export default Login;
-
-
-
