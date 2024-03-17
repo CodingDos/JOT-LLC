@@ -1,0 +1,20 @@
+.navbar-toggler-icon {
+    background-image: url("https://i.imgur.com/swNiB4a.png");
+}
+
+.navbar-toggler {
+    margin-left: 2%;
+}
+.navbarListItems {
+    display: flex;
+    justify-content: center;
+    color: white;   
+}
+
+.rootNav {
+    background-color: #020524;
+}
+
+.logo {
+    color: white;
+}
