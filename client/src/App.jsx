@@ -28,7 +28,7 @@ function App() {
   }, []);
 
   return (
-    <div className ="backgroundIMG">
+    <>
       <Hamburger />
       <Routes>
         <Route path="/" element={<Landing />} />
@@ -40,7 +40,7 @@ function App() {
         <Route path="/about" element={<About />} />
       </Routes>
       <Footer />
-    </div>
+    </>
   );
 }
 
