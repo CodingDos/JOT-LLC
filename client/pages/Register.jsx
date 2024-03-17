@@ -28,6 +28,7 @@ function Register(props) {
   const onRegister = async (event) => {
     event.preventDefault();
     const { setUser } = props;
+    console.log(setUser);
     try {
       const user = await register(form);
       setUser(user);
@@ -61,6 +62,7 @@ function Register(props) {
 
   return (
     <div>
+      <h1>This is register page</h1>
       <Form onSubmit={onRegister}>
         <FloatingLabel
           controlId="floatingInput"
@@ -128,6 +130,7 @@ function Register(props) {
               placeholder="Re-Type Password"
               name="passwordConfirmation"
               value={passwordConfirmation}
+              onChange={handleChange}
             />
             <Form.Control.Feedback type="invalid">
               Passwords do not match
