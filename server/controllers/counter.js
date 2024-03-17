@@ -14,7 +14,7 @@ export const getCounters = async (req, res) => {
 export const createCounter = async (req, res) => {
   try {
     const { categoryId } = req.params;
-    const newCounter = new Counter(...req.body, categoryId);
+    const newCounter = new Counter({ ...req.body, categoryId: categoryId });
     await newCounter.save();
     res.status(201).json(newCounter);
   } catch (error) {
@@ -23,13 +23,51 @@ export const createCounter = async (req, res) => {
   }
 };
 
+export const editCounter = async (req, res) => {
+  try {
+    const { counterId } = req.params;
+    const counter = await Counter.findByIdAndUpdate(
+      counterId, // Directly pass counterId here
+      req.body,
+      {
+        new: true, // Return the updated object
+      }
+    );
+
+    if (!counter) {
+      return res.status(404).json({ message: "Counter not found" });
+    }
+
+    res.status(200).json(counter); // 200 OK for successful update
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: error.message });
+  }
+};
+//For testing
 // export const editCounter = async (req, res) => {
 //   try {
-//     const { id } = req.params;
-//     const counter = await Counter.findByIdAndUpdate(id, req.body, {
-//       new: true,
-//     });
-//     res.status(201).json(counter);
+//     const { counterId } = req.params;
+//     const { title, notes } = req.body;
+
+//     // Fetch the counter once and make all necessary updates
+//     const counter = await Counter.findById(counterId);
+//     if (!counter) {
+//       return res.status(404).json({ message: "Counter not found" });
+//     }
+
+//     // Update title if provided
+//     if (title) {
+//       counter.title = title;
+//     }
+
+//     // Append additional notes to the existing notes if provided
+//     if (notes) {
+//       counter.notes = counter.notes ? `${counter.notes}${notes}` : notes;
+//     }
+
+//     await counter.save(); // Save the counter with all updates
+//     res.status(200).json(counter);
 //   } catch (error) {
 //     console.error(error);
 //     res.status(500).json({ error: error.message });
