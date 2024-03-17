@@ -10,8 +10,10 @@ const getToken = () => {
 // Creates a new Axios instance with a base URL taken from your environment variables
 // This base URL is where your API requests will be sent by default
 const api = axios.create({
-  baseURL: import.meta.env.VITE_BASE_URL, ///////// WILL NEED TO TEST THIS /////////
+  baseURL: "http://localhost:3000", ///////// WILL NEED TO TEST THIS /////////
 });
+
+console.log("api", api);
 
 api.interceptors.request.use(
   async function (config) {
