@@ -5,7 +5,7 @@ const { Schema } = mongoose;
 let CounterSchema = new Schema(
   {
     categoryId: { type: Schema.Types.ObjectId, ref: "categories" },
-    title: { type: String, unique: true },
+    title: { type: String },
     count: { type: Number },
     notes: { type: String, required: false },
   },
