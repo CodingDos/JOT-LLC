@@ -11,9 +11,9 @@ function Hamburger() {
             <Navbar.Toggle aria-controls="navbar" />
             <Navbar.Collapse id="navbar">
                 <Nav className="navList">
-                    <Nav.Link href="home">Landing Page</Nav.Link>
-                    <Nav.Link href="category">Category Page</Nav.Link>
-                    <Nav.Link href="About">About Page</Nav.Link>
+                    <Nav.Link href="home">Landing</Nav.Link>
+                    <Nav.Link href="category">Category</Nav.Link>
+                    <Nav.Link href="About">About</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Container>
