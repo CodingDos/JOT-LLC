@@ -28,14 +28,19 @@ function App() {
   }, []);
 
   return (
-    <div className ="backgroundIMG">
+    <div className="backgroundIMG">
       <Hamburger />
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/register" element={<Register setUser={setUser} />} />
         <Route path="/login" element={<Login setUser={setUser} />} />
+<<<<<<< Updated upstream
         <Route path="/category" element={<Categories />} />
         <Route path="/counter" element={<Counter />} />
+=======
+        <Route path="/category" element={<Category />} />
+        <Route path="/counter/:categoryId" element={<Counter />} />
+>>>>>>> Stashed changes
         <Route path="/data-page/:categoryID" element={<Data />} />
         <Route path="/about" element={<About />} />
       </Routes>
