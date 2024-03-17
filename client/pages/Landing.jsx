@@ -7,8 +7,10 @@ function Landing() {
     <div className='landingPage'>
         <div className='landingBody'>
             <div className='landingContent'>
-                <h1 className='appName'>JOT</h1>
-                <p className='appDescription'>blah blah blah</p>
+              <div>
+                <h1>JOT</h1>
+                <h4>Your personal canvas for fleeting thoughts, allowing you to record, organize, and explore your inner dialogue. A thought companion that helps you keep track of your mental landscape.</h4>
+              </div>
                 <Link to="/register">
                     <button className='signUpButton'>Sign Up</button>
                 </Link>
