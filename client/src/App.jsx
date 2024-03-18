@@ -10,8 +10,6 @@ import Data from "../pages/Data.jsx";
 import Login from "../pages/Login.jsx";
 import Register from "../pages/Register.jsx";
 import Footer from "../components/Footer.jsx";
-import About from "../pages/About.jsx";
-
 import { verify } from "../services/users.js";
 
 import { Routes, Route } from "react-router-dom";
@@ -37,7 +35,6 @@ function App() {
         <Route path="/category" element={<Categories />} />
         <Route path="/counters/:categoryId" element={<Counters />} />
         <Route path="/data-page/:categoryID" element={<Data />} />
-        <Route path="/about" element={<About />} />
       </Routes>
       <Footer />
     </div>

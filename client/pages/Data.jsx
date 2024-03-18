@@ -14,19 +14,40 @@ function CounterData() {
       if (categoryID) {
         const allCounters = await getCounters(categoryID);
 
+<<<<<<< Updated upstream
         let labels = allCounters?.map((char) => char?.title);
         let data = allCounters?.map((char) => char?.count);
 
         setCounters({
           labels: labels,
           datasets: [
+=======
+        let labels = allCounters.map(char => char.title)
+        let data = allCounters.map(char => char.count)
+
+        setCounters({
+          labels: labels, 
+          dataSet: [
+>>>>>>> Stashed changes
             {
               label: "Count: ",
               data: data,
               backgroundColor: [
+<<<<<<< Updated upstream
                 "rgba(255, 99, 132, 0.2)",
                 "rgba(54, 162, 235, 0.2)",
                 "rgba(255, 206, 86, 0.2)",
+=======
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                "rgba(141, 24, 40, 0.9)",
+                "rgba(35, 239, 252, 0.2)",
+                "rgba(65, 110, 209, 0.2)",
+                "rgba(253, 71, 34, 0.8)",
+                "rgba(177, 187, 160, 0.8)"
+                // Add more colors for each slice as needed
+>>>>>>> Stashed changes
               ],
               borderColor: [
                 "rgba(255, 99, 132, 1)",
@@ -45,7 +66,11 @@ function CounterData() {
   return (
     <div>
       <h1>Pie Chart</h1>
+<<<<<<< Updated upstream
       {counters?.labels?.length > 0 && <Pie data={counters} />}
+=======
+      {categoryID && <Pie data={counters} />}
+>>>>>>> Stashed changes
     </div>
   );
 }
