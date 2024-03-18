@@ -15,7 +15,6 @@ export const getCounters = async (req, res) => {
 export const createCounter = async (req, res) => {
   try {
     const { categoryId } = req.params;
-    console.log("URL", categoryId);
     const newCounter = new Counter({ ...req.body, categoryId: categoryId });
     await newCounter.save();
     res.status(201).json(newCounter);
