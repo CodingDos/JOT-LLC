@@ -28,19 +28,19 @@ function App() {
   }, []);
 
   return (
-    <>
+    <div className="backgroundIMG">
       <Hamburger />
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/register" element={<Register setUser={setUser} />} />
         <Route path="/login" element={<Login setUser={setUser} />} />
         <Route path="/category" element={<Categories />} />
-        <Route path="/counter" element={<Counter />} />
+        <Route path="/counters/:categoryId" element={<Counter />} />
         <Route path="/data-page/:categoryID" element={<Data />} />
         <Route path="/about" element={<About />} />
       </Routes>
       <Footer />
-    </>
+    </div>
   );
 }
 

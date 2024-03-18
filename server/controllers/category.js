@@ -21,6 +21,17 @@ export const getCategories = async (req, res) => {
   }
 };
 
+export const getCategory = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const category = await Category.findById(id);
+    res.status(200).json(category);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: error.message });
+  }
+};
+
 export const createCategory = async (req, res) => {
   try {
     const token = req.headers.authorization.split(" ")[1];
@@ -50,14 +61,15 @@ export const createCategory = async (req, res) => {
 export const editCategory = async (req, res) => {
   try {
     const { id } = req.params;
-    const category = await Category.findByIdAndUpdate(id, req.body, { new: true });
+    const category = await Category.findByIdAndUpdate(id, req.body, {
+      new: true,
+    });
     res.status(200).json(category);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: error.message });
   }
 };
-
 
 export const deleteCategory = async (req, res) => {
   try {
