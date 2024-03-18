@@ -1,6 +1,6 @@
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
-
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import { login } from "../services/users.js";
 import { useNavigate } from "react-router-dom";
@@ -82,6 +82,9 @@ function Login(props) {
         </FloatingLabel>
         {renderError()}
       </Form>
+      <p>
+        Dont have an account? <Link to={"/register"}>Register </Link>
+      </p>
     </div>
   );
 }

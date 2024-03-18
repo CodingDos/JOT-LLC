@@ -3,12 +3,11 @@ import { useParams } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import { Modal, Button } from "react-bootstrap";
 import Counter from "../components/Counter.jsx";
-import Image from "react-bootstrap/Image";
-import addButton from "../src/assets/addButton.png";
 import {
   getCounters,
   getCategory,
   createCounter,
+  // addCount,
 } from "../services/counter.js";
 
 function Counters() {
@@ -56,7 +55,11 @@ function Counters() {
     }
   };
 
-  console.log(showModal);
+  const handelIncrement = async () => {
+    console.log("i got clicked");
+    // addCount
+  };
+
   const handleChange = async (e) => {
     const { name, value } = e.target;
     setNewCounter((prev) => ({
@@ -69,11 +72,15 @@ function Counters() {
     <div>
       <h1>{category.title}</h1>
       {counters.map((counter) => (
-        <Counter counter={counter} key={counter._id} />
+        <Counter
+          counter={counter}
+          handelIncrement={handelIncrement}
+          key={counter._id}
+        />
       ))}
 
-      <Button onClick={() => setShowModal(true)}>
-        <Image src={addButton} roundedCircle />
+      <Button variant="primary" onClick={() => setShowModal(true)}>
+        +
       </Button>
 
       <Modal show={showModal} onHide={() => setShowModal(false)}>

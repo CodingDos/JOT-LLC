@@ -77,7 +77,6 @@ export const editCounter = async (req, res) => {
 
 export const addCount = async (req, res) => {
   try {
-    const { id } = req.params;
     let counter = Counter.findById(id);
     let currentCount = counter.count;
     const updatedCount = await Counter.findByIdAndUpdate(id, {
