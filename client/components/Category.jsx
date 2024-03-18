@@ -9,10 +9,7 @@ function Category({category}) {
       </Link>
 
     </div>
-    // <Link className='characterBox' to={`/characters/${character._id}`}>
-    //     <h4>{character.character}</h4>
-    //     <img className="character-images" src={character.image} alt={character.character}/>
-    // </Link>
+
   )
 }
 
