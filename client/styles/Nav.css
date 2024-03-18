@@ -18,3 +18,7 @@
 .logo {
     color: white;
 }
+
+.loggedOut {
+    display: none;
+}
