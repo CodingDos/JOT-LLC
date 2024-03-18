@@ -2,8 +2,9 @@ import Counter from "../models/Counter.js";
 
 export const getCounters = async (req, res) => {
   try {
-    const { id } = req.params;
-    const counter = await Counter.find(id);
+    const { categoryId } = req.params;
+    console.log("URL", categoryId);
+    const counter = await Counter.find({ categoryId: categoryId });
     res.json(counter);
   } catch (error) {
     console.error(error);
@@ -14,6 +15,7 @@ export const getCounters = async (req, res) => {
 export const createCounter = async (req, res) => {
   try {
     const { categoryId } = req.params;
+    console.log("URL", categoryId);
     const newCounter = new Counter({ ...req.body, categoryId: categoryId });
     await newCounter.save();
     res.status(201).json(newCounter);
