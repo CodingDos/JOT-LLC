@@ -2,8 +2,9 @@ import Counter from "../models/Counter.js";
 
 export const getCounters = async (req, res) => {
   try {
-    const { id } = req.params;
-    const counter = await Counter.find(id);
+    const { categoryId } = req.params;
+    console.log("URL", categoryId);
+    const counter = await Counter.find({ categoryId: categoryId });
     res.json(counter);
   } catch (error) {
     console.error(error);
@@ -76,7 +77,6 @@ export const editCounter = async (req, res) => {
 
 export const addCount = async (req, res) => {
   try {
-    const { id } = req.params;
     let counter = Counter.findById(id);
     let currentCount = counter.count;
     const updatedCount = await Counter.findByIdAndUpdate(id, {
