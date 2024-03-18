@@ -1,30 +1,30 @@
-import { getData } from "../services/data.js"
-import { useState, useEffect } from "react"
-
+import { getCounters } from "../services/counter.js";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 function CounterData() {
-  let [counters, setCounters] = useState([])
-  
-  async function fetchData(){
-    let allCounters = getData()
-    setCounters(allCounters)
-    console.log(setCounters) //need to test to ensure data is being pulled
-  }
-    useEffect(() => {
-      fetchData()
-      
-    }, [])
+  const { categoryID } = useParams(); // Make sure this matches the route parameter name
+  const [counters, setCounters] = useState(null);
 
-    console.log(console.log(setCounters)) //need to test to ensure data is being pulled
+  useEffect(() => {
+    const fetchData = async () => {
+      if (categoryID) {
+        // Check if categoryID is not undefined
+        const allCounters = await getCounters(categoryID);
+        setCounters(allCounters);
+      }
+    };
+    fetchData();
+  }, [categoryID]);
 
-    counters.map((counter) => {
-      console.log(counter)
-    })
+  console.log("Category ID:", categoryID); // For debugging
+  console.log("Counters:", counters); // For debugging
 
   return (
-
-    <div></div>
-  )
+    <div>
+      <h1>Data Page</h1>
+    </div>
+  );
 }
 
-export default CounterData
+export default CounterData;

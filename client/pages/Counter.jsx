@@ -23,7 +23,9 @@ function Counter() {
 
   return (
     <div>
-      <h1>{category.title} </h1>
+      <h1> {category.title}</h1>
+      {counters.map((counter) => {})}
+      {console.log(counters)}
     </div>
   );
 }
