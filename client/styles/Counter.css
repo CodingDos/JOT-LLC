@@ -1,0 +1,9 @@
+.counter {
+  display: flex;
+  background-color: pink;
+  width: 200px;
+  height: 105px;
+  margin: 30px;
+  flex-direction: column;
+  text-align: center;
+}
