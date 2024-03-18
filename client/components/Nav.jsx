@@ -5,21 +5,25 @@ import Button from "react-bootstrap/Button";
 import { useLocation, Link, useNavigate } from "react-router-dom";
 import { signOut } from "../services/users.js";
 import * as navcss from "../styles/Nav.css"
+import { useState } from "react"
 
 
-function Hamburger() {
+function Hamburger(props) {
   let navigate = useNavigate();
   let currentLocation = useLocation();
   let buttonName;
   let buttonLink;
 
-  if (currentLocation.pathname === "/login") {
+  const { setUser } = props
+  const [className, setClassName] = useState("loggedOut")
+  if (setUser){
+    setClassName["loggedIn"]
+    // buttonName = "Login";
+    // buttonLink = "/login";
+  } else if (currentLocation.pathname === "/login") {
     buttonName = "Register";
     buttonLink = "/register";
   } else if (currentLocation === "/register") {
-    buttonName = "Login";
-    buttonLink = "/login";
-  } else {
     buttonName = "Login";
     buttonLink = "/login";
   }
@@ -38,7 +42,7 @@ function Hamburger() {
             <Navbar.Brand className ="logo"href="/"> Jot </Navbar.Brand>
             <Nav className="ms-auto">
                 <Link to={buttonLink}>
-                    <Button className="">{buttonName}</Button>
+                    <Button className={className}>{buttonName}</Button>
                 </Link>
             </Nav>
                 <Navbar.Toggle aria-controls="navbar" />

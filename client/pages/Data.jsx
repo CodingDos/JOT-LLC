@@ -13,7 +13,7 @@ function CounterData() {
         const allCounters = await getCounters(categoryID);
 
         let title = allCounters.map(char => char.title)
-        let count = allCounter.map(char => char.count)
+        let count = allCounters.map(char => char.count)
 
         setCounters({
           title: title, 

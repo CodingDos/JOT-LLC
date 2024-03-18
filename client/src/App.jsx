@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div className="backgroundIMG">
-      <Hamburger />
+      <Hamburger setUser={setUser}/>
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/register" element={<Register setUser={setUser} />} />
