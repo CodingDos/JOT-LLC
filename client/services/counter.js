@@ -2,7 +2,7 @@ import api from "./apiConfig";
 
 export const getCategory = async (categoryId) => {
   try {
-    const response = await api.get(`/categories/${categoryId}`);
+    const response = await api.get(`/category/${categoryId}`);
     return response.data;
   } catch (error) {
     console.error(error);

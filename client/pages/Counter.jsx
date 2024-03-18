@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getCounters, getCategory } from "../services/counterService.js";
+import { getCounters, getCategory } from "../services/counter.js";
 
 function Counter() {
   let { categoryId } = useParams();
@@ -23,7 +23,7 @@ function Counter() {
 
   return (
     <div>
-      <h1>Welcome </h1>
+      <h1>{category.title} </h1>
     </div>
   );
 }
