@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { register } from "../services/users.js";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import InputGroup from "react-bootstrap/InputGroup";
@@ -139,6 +139,9 @@ function Register(props) {
         </InputGroup>
         {renderError()}
       </Form>
+      <p>
+        Already Have an account? <Link to={"/login"}>Login </Link>
+      </p>
     </div>
   );
 }
