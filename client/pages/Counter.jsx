@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import { Modal, Button } from "react-bootstrap";
 import Counter from "../components/Counter.jsx";
@@ -7,7 +7,7 @@ import {
   getCounters,
   getCategory,
   createCounter,
-  // addCount,
+  addCount,
 } from "../services/counter.js";
 
 function Counters() {
@@ -25,6 +25,9 @@ function Counters() {
   });
 
   const [showModal, setShowModal] = useState(false);
+  const [toggle, setToggle] = useState(false);
+
+  let navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,7 +44,7 @@ function Counters() {
     if (categoryId) {
       fetchData();
     }
-  }, [categoryId]); // Ensure categoryId is in the dependency array
+  }, [categoryId, toggle]); // Ensure categoryId is in the dependency array
 
   const handleCreateCounter = async (e) => {
     e.preventDefault();
@@ -55,17 +58,17 @@ function Counters() {
     }
   };
 
-  const handelIncrement = async () => {
-    console.log("i got clicked");
-    // addCount
-  };
-
   const handleChange = async (e) => {
     const { name, value } = e.target;
     setNewCounter((prev) => ({
       ...prev,
       [name]: value,
     }));
+  };
+
+  const handelIncrement = async (counterId) => {
+    await addCount(counterId);
+    setToggle((prev) => !prev);
   };
 
   return (
@@ -81,6 +84,10 @@ function Counters() {
 
       <Button variant="primary" onClick={() => setShowModal(true)}>
         +
+      </Button>
+
+      <Button onClick={() => navigate(`/data-page/${categoryId}`)}>
+        Pie Chart
       </Button>
 
       <Modal show={showModal} onHide={() => setShowModal(false)}>
