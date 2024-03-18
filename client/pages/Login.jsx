@@ -1,10 +1,7 @@
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
-<<<<<<< Updated upstream
 import { Link } from "react-router-dom";
-=======
-import "../styles/Login.css"
->>>>>>> Stashed changes
+import "../styles/Login.css";
 import { useState } from "react";
 import { login } from "../services/users.js";
 import { useNavigate } from "react-router-dom";
