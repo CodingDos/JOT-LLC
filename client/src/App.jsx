@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 import Hamburger from "../components/Nav.jsx";
 import Landing from "../pages/Landing.jsx";
-import Counter from "../pages/Counter.jsx";
+import Counters from "../pages/Counter.jsx";
 import Categories from "../pages/Category.jsx";
 import Data from "../pages/Data.jsx";
 import Login from "../pages/Login.jsx";
@@ -35,7 +35,7 @@ function App() {
         <Route path="/register" element={<Register setUser={setUser} />} />
         <Route path="/login" element={<Login setUser={setUser} />} />
         <Route path="/category" element={<Categories />} />
-        <Route path="/counters/:categoryId" element={<Counter />} />
+        <Route path="/counters/:categoryId" element={<Counters />} />
         <Route path="/data-page/:categoryID" element={<Data />} />
         <Route path="/about" element={<About />} />
       </Routes>

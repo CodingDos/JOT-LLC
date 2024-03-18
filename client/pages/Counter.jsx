@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Counter from "../components/Counter.jsx";
 import { getCounters, getCategory } from "../services/counter.js";
 
-function Counter() {
+function Counters() {
   let { categoryId } = useParams();
-  const [category, setCategory] = useState(null);
+  const [category, setCategory] = useState("");
   const [counters, setCounters] = useState([]);
 
   useEffect(() => {
@@ -18,16 +19,20 @@ function Counter() {
         console.error("Error fetching data:", error);
       }
     };
-    fetchData();
-  }, [categoryId]);
+
+    if (categoryId) {
+      fetchData();
+    }
+  }, []); // Ensure categoryId is in the dependency array
 
   return (
     <div>
-      <h1> {category.title}</h1>
-      {counters.map((counter) => {})}
-      {console.log(counters)}
+      <h1>{category.title}</h1>
+      {counters.map((counter) => (
+        <Counter counter={counter} key={counter._id} />
+      ))}
     </div>
   );
 }
 
-export default Counter;
+export default Counters;
