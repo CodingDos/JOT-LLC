@@ -1,15 +1,5 @@
 import api from "./apiConfig";
 
-export const getCategory = async (categoryId) => {
-  try {
-    const response = await api.get(`/category/${categoryId}`);
-    return response.data;
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
-};
-
 export const getCounters = async (categoryId) => {
   try {
     const response = await api.get(`/counters/${categoryId}`);

@@ -1,19 +1,23 @@
 import { getCounters } from "../services/counter.js";
+import { getCategory } from "../services/categories.js";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 ChartJS.register(ArcElement, Tooltip, Legend);
 import { Pie } from "react-chartjs-2";
+import "../styles/Data.css";
 
 function CounterData() {
   const { categoryID } = useParams(); // Make sure this matches the route parameter name
   const [counters, setCounters] = useState(null);
+  const [category, setCategory] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
       if (categoryID) {
         const allCounters = await getCounters(categoryID);
-
+        const oneCategory = await getCategory(categoryID);
+        setCategory(oneCategory.title);
         let labels = allCounters?.map((char) => char?.title);
         let data = allCounters?.map((char) => char?.count);
 
@@ -49,9 +53,18 @@ function CounterData() {
   }, [categoryID]);
 
   return (
-    <div>
-      <h1>Pie Chart</h1>
-      {counters?.labels?.length > 0 && <Pie data={counters} />}
+    <div className="dataContainer">
+      <div className="chart-container">
+        {/* <div> */}
+        <h1 className="dataTitle">
+          {category}
+          <span> Pie Chart</span>
+        </h1>
+        {counters?.labels?.length > 0 && (
+          <Pie className="dataPieChart" data={counters} />
+        )}
+        {/* </div> */}
+      </div>
     </div>
   );
 }

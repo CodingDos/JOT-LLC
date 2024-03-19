@@ -3,12 +3,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import { Modal, Button } from "react-bootstrap";
 import Counter from "../components/Counter.jsx";
-import {
-  getCounters,
-  getCategory,
-  createCounter,
-  addCount,
-} from "../services/counter.js";
+import { getCounters, createCounter, addCount } from "../services/counter.js";
+import { getCategory } from "../services/categories.js";
 import "../styles/Counter.css";
 
 function Counters() {
