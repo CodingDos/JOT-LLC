@@ -54,8 +54,10 @@ export const addCount = async (counterId) => {
 };
 
 export const editCounter = async (counterId, counterData) => {
+  console.log("Sending to backend:", counterData); // Debugging line to see what's sent to the backend
   try {
-    const response = await api.put(`/counters/${counterId}`, counterData);
+    const response = await api.put(`/counters/edit/${counterId}`, counterData);
+    console.log("Response from backend:", response.data);
     return response.data;
   } catch (error) {
     console.error(error);
@@ -65,7 +67,8 @@ export const editCounter = async (counterId, counterData) => {
 
 export const deleteCounter = async (counterId) => {
   try {
-    const response = await api.delete(`/counters/${counterId}`);
+    const response = await api.delete(`/counters/delete/${counterId}`);
+    console.log(response.data);
     return response.data;
   } catch (error) {
     console.error(error);

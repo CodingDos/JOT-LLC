@@ -1,6 +1,7 @@
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
+import "../styles/Login.css";
 import { useState } from "react";
 import { login } from "../services/users.js";
 import { useNavigate } from "react-router-dom";
@@ -56,8 +57,8 @@ function Login(props) {
   const { username, password } = form;
 
   return (
-    <div>
-      <Form onSubmit={onSignIn}>
+    <div className="rootLogin">
+      <Form className="loginForm" onSubmit={onSignIn}>
         <FloatingLabel
           controlId="floatingInput"
           label="Username"

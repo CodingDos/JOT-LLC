@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Broken+Fax&display=swap');
+
+
 .navbar-toggler-icon {
     background-image: url("https://i.imgur.com/swNiB4a.png");
 }
@@ -16,9 +19,22 @@
 }
 
 .logo {
+    font-family: 'Rubik Broken Fax', sans-serif;
+    font-size: xx-large;
     color: white;
 }
 
 .loggedOut {
     display: none;
+}
+
+.login-btn {
+    font-size: 75%;
+    background-color: #FB2576;
+    color: white;
+    border-radius: 0.375rem;
+    border-style: solid;
+    border-color: #FB2576;
+    height: 2rem;
+    width: 4rem;
 }

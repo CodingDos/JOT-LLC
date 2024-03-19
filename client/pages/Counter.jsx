@@ -66,7 +66,8 @@ function Counters() {
     }));
   };
 
-  const handelIncrement = async (counterId) => {
+  const handleIncrement = async (counterId) => {
+    console.log("I got clicked");
     await addCount(counterId);
     setToggle((prev) => !prev);
   };
@@ -77,7 +78,7 @@ function Counters() {
       {counters.map((counter) => (
         <Counter
           counter={counter}
-          handelIncrement={handelIncrement}
+          handleIncrement={handleIncrement}
           key={counter._id}
         />
       ))}

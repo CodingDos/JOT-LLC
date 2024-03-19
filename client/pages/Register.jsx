@@ -5,6 +5,7 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import InputGroup from "react-bootstrap/InputGroup";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import "../styles/Register.css"
 
 function Register(props) {
   // const [validated, setValidated] = useState(false);
@@ -61,9 +62,8 @@ function Register(props) {
   const { username, email, password, passwordConfirmation } = form;
 
   return (
-    <div>
-      <h1>This is register page</h1>
-      <Form onSubmit={onRegister}>
+    <div className="rootRegister">
+      <Form className="rootForm" onSubmit={onRegister}>
         <FloatingLabel
           controlId="floatingInput"
           label="Email address"
@@ -100,15 +100,14 @@ function Register(props) {
           </InputGroup>
         </FloatingLabel>
 
-        <InputGroup hasValidation>
           <FloatingLabel
             controlId="floatingPassword"
             label="Password"
             className="mb-3"
           >
+        <InputGroup hasValidation>
             <Form.Control
               type="password"
-              placeholder="Password"
               name="password"
               value={password}
               onChange={handleChange}
@@ -116,18 +115,17 @@ function Register(props) {
             <Form.Control.Feedback type="invalid">
               Please add Password.
             </Form.Control.Feedback>
-          </FloatingLabel>
         </InputGroup>
+          </FloatingLabel>
 
-        <InputGroup>
           <FloatingLabel
             controlId="floatingRetypePasswords"
             label="Re-Type Password"
             className="mb-3"
-          >
+            >
+            <InputGroup>
             <Form.Control
               type="password"
-              placeholder="Re-Type Password"
               name="passwordConfirmation"
               value={passwordConfirmation}
               onChange={handleChange}
@@ -135,8 +133,8 @@ function Register(props) {
             <Form.Control.Feedback type="invalid">
               Passwords do not match
             </Form.Control.Feedback>
-          </FloatingLabel>
-        </InputGroup>
+          </InputGroup>
+        </FloatingLabel>
         {renderError()}
       </Form>
       <p>
