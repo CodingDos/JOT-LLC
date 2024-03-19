@@ -56,7 +56,7 @@ function Register(props) {
         </button>
       );
     } else {
-      return <Button type="submit">Submit</Button>;
+      return <Button className="submitButton"type="submit">Submit</Button>;
     }
   };
   const { username, email, password, passwordConfirmation } = form;
