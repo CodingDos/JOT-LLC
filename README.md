@@ -34,8 +34,8 @@ Node.js & Express: The backend of Jot runs on Node.js, with Express as the web a
 
 Collaborators
 
-John Lopez 
-Noshin Chowdhury
+John Lopez | 
+Noshin Chowdhury | 
 Steven Villacis 
 
 
@@ -43,5 +43,5 @@ Shoutouts
 
 A special thanks to those who provided invaluable feedback and support:
 
-Raul Jiminian
+Raul Jiminian | 
 Jordan Bank 
