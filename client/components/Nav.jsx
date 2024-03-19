@@ -46,10 +46,10 @@ function Hamburger({ user }) {
           <Nav.Link href="/category" className="navbarListItems">
             Category
           </Nav.Link>
-          <Nav.Link href="/About" className="navbarListItems">
+          <Nav.Link href="/" className="navbarListItems">
             About
           </Nav.Link>
-          <Nav.Link onClick={handleLogout} href="/"></Nav.Link>
+          <Nav.Link className="navbarListItems" onClick={handleLogout} href="/">Logout</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </>
