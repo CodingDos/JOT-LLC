@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import { Button, Modal } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { editCounter, deleteCounter } from "../services/counter.js";
+import Form from "react-bootstrap/Form";
+
 import "../styles/Counter.css";
 
-function Counter({ counter, handleIncrement }) {
+function Counter({ counter, handleIncrement, backgroundColor }) {
   const navigate = useNavigate();
 
   const { title, count, notes, _id, categoryId } = counter;
@@ -30,6 +32,7 @@ function Counter({ counter, handleIncrement }) {
     try {
       const response = await editCounter(_id, oneCounter);
       setShowModal(false);
+      window.location.reload();
     } catch (error) {
       console.error("Error editing counter:", error);
     }
@@ -71,9 +74,14 @@ function Counter({ counter, handleIncrement }) {
 
   return (
     <div>
-      <div className="counter">
-        <div onClick={handleClick}>
-          {title} <p>Count {count}</p>
+      <div className="counter" style={{ backgroundColor }}>
+        <div className="counterInfo" onClick={handleClick}>
+          <h1 className="counterTitle">
+            {title.length > 15 ? `${title.substring(0, 15)}...` : title}
+          </h1>
+        </div>
+        <div className="counterCountContainer">
+          <p className="counterCount">{count}</p>
         </div>
         <Button className="counterButton" onClick={handleDoubleClick}>
           Add Count
@@ -85,17 +93,15 @@ function Counter({ counter, handleIncrement }) {
           <Modal.Title>Edit Counter</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <label htmlFor="title">Counter Title:</label>
-          <input
+          <Form.Label>Counter Title:</Form.Label>
+          <Form.Control
             type="text"
-            id="title"
             name="title"
             value={oneCounter.title}
             onChange={handleChange}
           />
-
-          <label htmlFor="notes">Notes:</label>
-          <input
+          <Form.Label>Notes:</Form.Label>
+          <Form.Control
             type="text"
             id="notes"
             name="notes"

@@ -9,8 +9,24 @@ import {
   createCounter,
   addCount,
 } from "../services/counter.js";
+import "../styles/Counter.css";
 
 function Counters() {
+  const pastelColors = [
+    "#FFC7EA",
+    "#FF7ED4",
+    "#ffffba",
+    "#FFBE98",
+    "#FC6736",
+    "#B06161",
+    "#525CEB",
+    "#F8BDEB",
+    "#219C90",
+    "#A8A196",
+    "#F7D060",
+    "#E493B3",
+  ];
+
   let { categoryId } = useParams();
 
   //setting state for category
@@ -72,26 +88,41 @@ function Counters() {
     setToggle((prev) => !prev);
   };
 
+  const handleClose = () => {
+    setShowModal(false);
+    window.location.reload();
+  };
+
   return (
-    <div>
-      <h1>{category.title}</h1>
-      {counters.map((counter) => (
-        <Counter
-          counter={counter}
-          handleIncrement={handleIncrement}
-          key={counter._id}
-        />
-      ))}
+    <div className="counterContainer">
+      <h1 className="counterCategoryTitle">{category.title}</h1>
+      <div className="counterComponentContainer">
+        {counters.map((counter, index) => (
+          <Counter
+            counter={counter}
+            handleIncrement={handleIncrement}
+            key={counter._id}
+            backgroundColor={pastelColors[index % pastelColors.length]} // Cycle through colors
+          />
+        ))}
+      </div>
 
-      <Button variant="primary" onClick={() => setShowModal(true)}>
-        +
+      <Button
+        className="counterAddButton"
+        variant="primary"
+        onClick={() => setShowModal(true)}
+      >
+        Create Counter
       </Button>
 
-      <Button onClick={() => navigate(`/data-page/${categoryId}`)}>
-        Pie Chart
+      <Button
+        className=" counterPieChart"
+        onClick={() => navigate(`/data-page/${categoryId}`)}
+      >
+        View Data
       </Button>
 
-      <Modal show={showModal} onHide={() => setShowModal(false)}>
+      <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Add A Counter</Modal.Title>
         </Modal.Header>
