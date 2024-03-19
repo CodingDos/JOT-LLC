@@ -44,14 +44,17 @@ function Category({ category }) {
 
 
   return (
-    <div className='categoryCloud'>
-      <Link className='categoryTitle' to={`/counters/${category._id}`}>
+    <div 
+    >
+      <div className='cloudContent'>
+      <Link className='categoryName' to={`/counters/${category._id}`}>
         <h4>{category.title}</h4>
       </Link>
-      <Button variant="primary" onClick={() => setShowModal(true)}>
+      <Button className='editButton' variant="primary" onClick={() => setShowModal(true)}>
         Edit
       </Button>
       <button className='deleteButton' onClick={handleDelete}>Delete</button>
+      </div>
 
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Header closeButton>
