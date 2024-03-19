@@ -64,6 +64,7 @@ function Register(props) {
   return (
     <div className="rootRegister">
       <Form className="rootForm" onSubmit={onRegister}>
+        <h3 className="registerTitle">Register</h3>
         <FloatingLabel
           controlId="floatingInput"
           label="Email address"

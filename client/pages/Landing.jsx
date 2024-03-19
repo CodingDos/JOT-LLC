@@ -25,14 +25,14 @@ function Landing() {
               </div>
               <div className='creatorsList'>
                 <a href="https://github.com/JLopez0001">
-                <img src={John} className='creatorListItem'></img>
-                </a>  John Lopez
+                <img src={John} className='creatorListItem'></img> John Lopez
+                </a>
                 <a href="https://github.com/noshinc346">
-                <img src={Nosh} className='creatorListItem'></img>
-                </a>  Noshin Chowdhury
+                <img src={Nosh} className='creatorListItem'></img> Noshin Chowdhury
+                </a>
                 <a href="https://github.com/CodingDos">
-                <img src={Steve} className='creatorListItem'></img>
-                </a>  Steven Villacis
+                <img src={Steve} className='creatorListItem'></img> Steven Villacis
+                </a>
               </div>
             </div>
 

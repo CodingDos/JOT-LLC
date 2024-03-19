@@ -6,7 +6,7 @@ function Footer() {
   return (
     <footer className="rootFooter">
       <div className="footerLink">
-        <Link to="/learn-more">Learn more about the people behind JOT</Link>
+        <Link to="/">Learn more about the people behind JOT</Link>
         <p>© 2024 JOT</p>
       </div>
     </footer>
