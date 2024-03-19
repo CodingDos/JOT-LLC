@@ -1,0 +1,89 @@
+.counterContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh; /* Use min-height instead of height to accommodate content that exceeds viewport height */
+  padding: 20px; /* Add some padding */
+}
+
+.counterComponentContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20%;
+}
+
+.counter {
+  display: flex;
+  background-color: pink;
+  width: 260px;
+  height: auto;
+  margin: 30px;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 10%;
+}
+
+.counterCategoryTitle {
+  font-family: "Madimi One", sans-serif;
+  text-align: center;
+  color: white;
+  margin-top: 50px;
+}
+
+.counterTitle {
+  font-family: "Madimi One", sans-serif;
+  margin-bottom: 0px;
+  color: #020524;
+  font-size: 25px;
+  white-space: nowrap; /* Keep the title in a single line */
+  overflow: hidden; /* Hide text that goes beyond the element's width */
+  text-overflow: ellipsis; /* Add '...' at the end of the text when it overflows */
+  max-width: 100%; /* Ensure the title does not exceed the container width */
+}
+
+.counterInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 20px 0 20px;
+}
+
+.counterCount {
+  font-weight: bolder;
+  font-size: 20px;
+  margin-bottom: 0px;
+}
+
+.counterButton {
+  background-color: #020524;
+}
+
+.counterAddButton {
+  display: flex;
+  margin: 50px;
+  height: 60px;
+  width: 200px;
+  font-size: 20px;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  background-color: #fb2576;
+}
+
+.counterPieChart {
+  height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  background-color: #fb2576;
+}
+
+.counterCountContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  margin-right: 20px;
+  margin-bottom: 0px;
+}

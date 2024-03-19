@@ -1,0 +1,33 @@
+.dataTitle {
+  font-family: "Madimi One", sans-serif;
+  text-align: center;
+  color: white;
+  margin: 50px;
+}
+
+.dataContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.chart-container {
+  width: 700px; /* Set your desired width */
+  height: 100vh; /* Set your desired height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 80px;
+  margin-top: 0px;
+}
+
+/* Optional: in case you specifically need to target the canvas,
+     but usually, you should control the size via the container. */
+
+@media (max-width: 768px) {
+  .chart-container {
+    width: 90%; /* On smaller screens, take 70% of the screen width */
+    margin-top: 20px; /* Smaller margin on small screens */
+    height: 100vh; /* Keep the height proportional or set a specific height if needed */
+  }
+}

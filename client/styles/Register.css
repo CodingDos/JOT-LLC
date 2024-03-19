@@ -1,0 +1,29 @@
+.registerTitle {
+  color: white;
+  font-family: "Macondo Swash Caps", cursive;
+  font-weight: bold;
+  margin-bottom: 10%;
+}
+
+.rootRegister {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.rootForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10%;
+}
+
+.input-group {
+  height: 3rem;
+}
+
+.existing {
+  color: white;
+}
