@@ -11,11 +11,14 @@
 .navbarListItems {
     display: flex;
     justify-content: center;
-    color: white;   
+    color: white;
+    font-family: "Macondo Swash Caps", cursive;
+    font-weight: bold;   
 }
 
 .rootNav {
     background-color: #020524;
+    position: relative;
 }
 
 .logo {

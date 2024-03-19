@@ -19,7 +19,7 @@ function Category({ category }) {
     await editCategory(category._id, title)
     setShowModal(false); // Close modal after editing
     setToggle(true)
-    // window.location.reload();
+    window.location.reload();
     
   };
 
@@ -44,17 +44,17 @@ function Category({ category }) {
 
 
   return (
-    <div 
-    >
-      <div className='cloudContent'>
-      <Link className='categoryName' to={`/counters/${category._id}`}>
-        <h4>{category.title}</h4>
-      </Link>
-      <Button className='editButton' variant="primary" onClick={() => setShowModal(true)}>
-        Edit
-      </Button>
-      <button className='deleteButton' onClick={handleDelete}>Delete</button>
+    <div className='cloud'>
+        <div className='cloudContent'>
+          <div className='categoryTitleJohn'>
+            <button className='deleteButton' onClick={handleDelete}>X</button>
+            <Button className='editButton' variant="primary" onClick={() => setShowModal(true)}>🖊️</Button>
+          </div>
+        <Link className='categoryName' to={`/counters/${category._id}`}>
+              <h4 className='fontSize'>{category.title}</h4>
+            </Link>
       </div>
+
 
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Header closeButton>

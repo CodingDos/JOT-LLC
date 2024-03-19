@@ -35,7 +35,7 @@ function Categories() {
       setShowModal(false);
       setTitle('');
       setToggle(true)
-      // window.location.reload();
+      window.location.reload();
     } catch (error) {
       console.error('Error creating category:', error);
     }
@@ -46,8 +46,13 @@ function Categories() {
   return (
     <div className="categoryContainer">
       <h2 className="categoryTitle">SELECT YOUR CATEGORY</h2>
+      <p className='categoryInstruct'>What aspect of life would you like to log?</p>
 
-
+      <div className='createContainer'>
+        <Button className='createCategoryButton' variant="primary" onClick={() => setShowModal(true)}>
+          Create Category
+        </Button>
+      </div>
     {/* TO DISPLAY THE CATEGORIES ON THE PAGE */}
       <div className="userCategories">
         {categories.map((category) => (
@@ -57,9 +62,7 @@ function Categories() {
 
 
     {/* FUNCTION FOR CREATE CATEGORY - BUTTON AND MODAL OPENING FORM */}
-      <Button variant="primary" onClick={() => setShowModal(true)}>
-        +
-      </Button>
+
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Header closeButton>
           <Modal.Title>Add Category</Modal.Title>

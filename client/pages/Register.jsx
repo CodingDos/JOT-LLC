@@ -56,7 +56,7 @@ function Register(props) {
         </button>
       );
     } else {
-      return <Button type="submit">Submit</Button>;
+      return <Button className="submitButton"type="submit">Submit</Button>;
     }
   };
   const { username, email, password, passwordConfirmation } = form;
@@ -64,6 +64,7 @@ function Register(props) {
   return (
     <div className="rootRegister">
       <Form className="rootForm" onSubmit={onRegister}>
+        <h3 className="registerTitle">Register</h3>
         <FloatingLabel
           controlId="floatingInput"
           label="Email address"
