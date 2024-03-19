@@ -7,6 +7,10 @@
         margin-top: 50px;
 }
 
+.categoryContainer {
+    height: 100vh;
+}
+
 .cloud {
   background-color: white; 
   margin: 15px;
@@ -54,3 +58,5 @@
     cursor: pointer;
     border-radius: 20px;
 }
+
+
