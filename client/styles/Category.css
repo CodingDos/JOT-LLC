@@ -1,18 +1,18 @@
 /* @import url('../LocalImages/thought%20(1).png'); */
 
 .categoryTitle {
-        font-family: 'Madimi One', sans-serif;
-        text-align: center;
-        color: white;
-        margin-top: 50px;
+  font-family: "Madimi One", sans-serif;
+  text-align: center;
+  color: white;
+  margin-top: 50px;
 }
 
 .categoryContainer {
-
+  min-height: 100vh;
 }
 
 .cloud {
-  background-color: white; 
+  background-color: white;
   margin: 15px;
   padding: 10px;
   border-radius: 40px;
@@ -20,89 +20,85 @@
 }
 
 .cloud:hover {
-    background-color: grey;
+  background-color: grey;
 }
 
 .userCategories {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .cloudContent {
-    text-align: center;
-    line-height: 2px;
+  text-align: center;
+  line-height: 2px;
 }
 
 .categoryName {
-    text-decoration: none;
-    color: #020524;
+  text-decoration: none;
+  color: #020524;
 }
 
-.fontSize{
-    font-size: 200%;
+.fontSize {
+  font-size: 200%;
 }
 
 .editButton {
-
-    position: relative;
-    background-color: white;
-    border: none;
-    /* font-size: 28px; */
-    color: #FFFFFF;
-    /* padding: 20px; */
-    /* width: 200px; */
-    text-align: center;
-    transition-duration: 0.4s;
-    text-decoration: none;
-    overflow: hidden;
-    cursor: pointer;
+  position: relative;
+  background-color: white;
+  border: none;
+  /* font-size: 28px; */
+  color: #ffffff;
+  /* padding: 20px; */
+  /* width: 200px; */
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
 }
 
-.deleteButton{
-    position: relative;
-    background-color: #f33030;
-    border: none;
-    font-size: 8px;
-    color: #FFFFFF;
-    width: 20px;
-    height: 20px;
-    text-align: center;
-    transition-duration: 0.4s;
-    text-decoration: none;
-    overflow: hidden;
-    cursor: pointer;
-    border-radius: 20px;
-    margin-top: 5px;
-    margin-left: 7px;
+.deleteButton {
+  position: relative;
+  background-color: #f33030;
+  border: none;
+  font-size: 8px;
+  color: #ffffff;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-top: 5px;
+  margin-left: 7px;
 }
 
 .categoryTitleJohn {
-    display: flex;
-    justify-content: space-between;
-
+  display: flex;
+  justify-content: space-between;
 }
-
 
 .categoryName {
-    margin-left: 25%;
-    font-family: 'Madimi One', sans-serif;
+  margin-left: 25%;
+  font-family: "Madimi One", sans-serif;
 }
 
-
-.createContainer{
-    display: flex;
-    justify-content: center;
-    margin-top: 5%;
-    margin-bottom: 2%;
+.createContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+  margin-bottom: 2%;
 }
 
-.categoryInstruct{
-    color: white;
-    text-align: center;
+.categoryInstruct {
+  color: white;
+  text-align: center;
 }
 
-.createCategoryButton{
-    background-color: #f33030;
+.createCategoryButton {
+  background-color: #f33030;
 }

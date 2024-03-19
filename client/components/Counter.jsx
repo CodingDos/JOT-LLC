@@ -41,6 +41,7 @@ function Counter({ counter, handleIncrement, backgroundColor }) {
   const handleDelete = async () => {
     try {
       await deleteCounter(_id);
+      window.location.reload();
       navigate(`/counters/${categoryId}`);
     } catch (error) {
       console.error("Error deleting counter:", error);

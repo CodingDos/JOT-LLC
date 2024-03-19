@@ -126,7 +126,7 @@ function Counters() {
         <Modal.Body>
           <Form onSubmit={handleCreateCounter}>
             <Form.Group className="mb-3">
-              <Form.Label>Sub Category:</Form.Label>
+              <Form.Label>Counter Name:</Form.Label>
               <Form.Control
                 type="text"
                 name="title"
@@ -146,9 +146,6 @@ function Counters() {
               />
             </Form.Group>
             <Modal.Footer>
-              <Button variant="secondary" onClick={() => setShowModal(false)}>
-                Close
-              </Button>
               <Button variant="primary" type="submit">
                 Add
               </Button>

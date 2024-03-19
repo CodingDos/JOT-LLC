@@ -50,14 +50,17 @@ function Login(props) {
         </button>
       );
     } else {
-      return <button type="submit" className="submitButton">Sign In</button>;
+      return (
+        <button type="submit" className="submitButton">
+          Sign In
+        </button>
+      );
     }
   };
 
   const { username, password } = form;
 
   return (
-    
     <div className="rootLogin">
       <Form className="loginForm" onSubmit={onSignIn}>
         <h3 className="loginTitle">Login</h3>
@@ -85,7 +88,7 @@ function Login(props) {
         </FloatingLabel>
         {renderError()}
       </Form>
-      <p>
+      <p className="existing">
         Dont have an account? <Link to={"/register"}>Register </Link>
       </p>
     </div>

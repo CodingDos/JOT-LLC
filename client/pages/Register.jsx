@@ -5,7 +5,7 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import InputGroup from "react-bootstrap/InputGroup";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import "../styles/Register.css"
+import "../styles/Register.css";
 
 function Register(props) {
   // const [validated, setValidated] = useState(false);
@@ -33,7 +33,7 @@ function Register(props) {
     try {
       const user = await register(form);
       setUser(user);
-      navigate("/");
+      navigate("/category");
     } catch (error) {
       console.error(error);
       setForm({
@@ -56,7 +56,11 @@ function Register(props) {
         </button>
       );
     } else {
-      return <Button className="submitButton"type="submit">Submit</Button>;
+      return (
+        <Button className="submitButton" type="submit">
+          Submit
+        </Button>
+      );
     }
   };
   const { username, email, password, passwordConfirmation } = form;
@@ -70,17 +74,12 @@ function Register(props) {
           label="Email address"
           className="mb-3"
         >
-          <InputGroup hasValidation>
-            <Form.Control
-              type="email"
-              name="email"
-              value={email}
-              onChange={handleChange}
-            />
-            <Form.Control.Feedback type="invalid">
-              Please add email.
-            </Form.Control.Feedback>
-          </InputGroup>
+          <Form.Control
+            type="email"
+            name="email"
+            value={email}
+            onChange={handleChange}
+          />
         </FloatingLabel>
 
         <FloatingLabel
@@ -88,58 +87,43 @@ function Register(props) {
           label="Username"
           className="mb-3"
         >
-          <InputGroup hasValidation>
-            <Form.Control
-              type="text"
-              name="username"
-              value={username}
-              onChange={handleChange}
-            />
-            <Form.Control.Feedback type="invalid">
-              Please add Username.
-            </Form.Control.Feedback>
-          </InputGroup>
+          <Form.Control
+            type="text"
+            name="username"
+            value={username}
+            onChange={handleChange}
+          />
         </FloatingLabel>
 
-          <FloatingLabel
-            controlId="floatingPassword"
-            label="Password"
-            className="mb-3"
-          >
-        <InputGroup hasValidation>
-            <Form.Control
-              type="password"
-              name="password"
-              value={password}
-              onChange={handleChange}
-            />
-            <Form.Control.Feedback type="invalid">
-              Please add Password.
-            </Form.Control.Feedback>
-        </InputGroup>
-          </FloatingLabel>
+        <FloatingLabel
+          controlId="floatingPassword"
+          label="Password"
+          className="mb-3"
+        >
+          <Form.Control
+            type="password"
+            name="password"
+            value={password}
+            onChange={handleChange}
+          />
+        </FloatingLabel>
 
-          <FloatingLabel
-            controlId="floatingRetypePasswords"
-            label="Re-Type Password"
-            className="mb-3"
-            >
-            <InputGroup>
-            <Form.Control
-              type="password"
-              name="passwordConfirmation"
-              value={passwordConfirmation}
-              onChange={handleChange}
-            />
-            <Form.Control.Feedback type="invalid">
-              Passwords do not match
-            </Form.Control.Feedback>
-          </InputGroup>
+        <FloatingLabel
+          controlId="floatingRetypePasswords"
+          label="Re-Type Password"
+          className="mb-3"
+        >
+          <Form.Control
+            type="password"
+            name="passwordConfirmation"
+            value={passwordConfirmation}
+            onChange={handleChange}
+          />
         </FloatingLabel>
         {renderError()}
       </Form>
-      <p>
-        Already Have an account? <Link to={"/login"}>Login </Link>
+      <p className="existing">
+        Already Have an account? <Link to={"/"}>Login </Link>
       </p>
     </div>
   );

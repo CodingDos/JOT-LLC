@@ -1,11 +1,10 @@
-
-.rootFooter {
-
+.jot {
+  color: lightgray;
+  margin: 10px;
 }
-
 .footerLink {
-    display: flex;
-    background-color: #020524;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  background-color: #020524;
+  flex-direction: column;
+  align-items: center;
 }
