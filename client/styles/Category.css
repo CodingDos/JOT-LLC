@@ -1,0 +1,56 @@
+/* @import url('../LocalImages/thought%20(1).png'); */
+
+.categoryTitle {
+        font-family: 'Madimi One', sans-serif;
+        text-align: center;
+        color: white;
+        margin-top: 50px;
+}
+
+.cloud {
+  background-color: white; 
+  margin: 15px;
+  padding: 10px;
+  border-radius: 40px;
+}
+
+.cloudContent {
+    text-align: center;
+
+}
+
+.categoryName {
+    text-decoration: none;
+    color: #FB2576;
+}
+
+.editButton {
+    position: relative;
+    background-color: #04AA6D;
+    border: none;
+    /* font-size: 28px; */
+    color: #FFFFFF;
+    /* padding: 20px; */
+    /* width: 200px; */
+    text-align: center;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.deleteButton{
+    position: relative;
+    background-color: #f33030;
+    border: none;
+    /* font-size: 28px; */
+    color: #FFFFFF;
+    /* padding: 20px; */
+    /* width: 200px; */
+    text-align: center;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 20px;
+}

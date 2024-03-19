@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import Category from '../components/Category';
 import { getCategories, createCategory} from '../services/categories';
+import "../styles/Category.css";
 
 function Categories() {
   const [categories, setCategories] = useState([]);
