@@ -18,6 +18,11 @@
   border-radius: 40px;
   width: 200px;
 }
+
+.cloud:hover {
+    background-color: grey;
+}
+
 .userCategories {
     display: flex;
     align-items: center;
