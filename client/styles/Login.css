@@ -3,6 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .loginForm {
@@ -11,7 +12,7 @@
     flex-direction: column;
 }
 
-.loginForm button {
+.submitButton {
     font-size: 75%;
     background-color: #FB2576;
     color: white;
